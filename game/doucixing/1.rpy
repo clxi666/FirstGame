@@ -1,0 +1,2 @@
+label classroom:
+    return

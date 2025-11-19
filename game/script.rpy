@@ -1,0 +1,9 @@
+﻿
+
+
+label start:
+    jump thestart
+    
+
+
+
