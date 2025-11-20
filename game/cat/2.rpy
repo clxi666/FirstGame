@@ -181,7 +181,7 @@ label jujuemaodie:
             maodie "我其实不想这样的喵~"
             pangbai "冯邓红，卒"
             "解锁成就，草率的牺牲"
-            $ achievements.force_unlock("die")
+            $ achievements.unlock_achievement("die")
             "end"
             return
         "不救":
@@ -198,5 +198,5 @@ label jujuemaodie:
             "卒"
             mc "有时候也得根据自身能力做判断啊"
             "解锁成就，无情的人"
-            $ achievements.force_unlock("wuqing")
+            $ achievements.unlock_achievement("wuqing")
             

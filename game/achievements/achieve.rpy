@@ -26,7 +26,7 @@ init python:
                 "id": achievement_id,
                 "title": title,
                 "description": description,
-                "condition": condition_func,
+                # 移除这一行: "condition": condition_func,
                 "icon": icon or "achievement_default.png",
                 "hidden": hidden,
                 "unlocked": is_unlocked,

@@ -39,6 +39,6 @@ label out:
     mc "我的一切都毁了"
     scene black with fade
     "达成成就，见异思迁。"
-    $ achievements.force_unlock("single")
+    $ achievements.unlock_achievement("out")
     "end"
     return

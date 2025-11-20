@@ -103,7 +103,8 @@ label choice_leave:
     "他的肉体死亡了，精神却被带到了新的空间。"
     "一个声音" "上一任上帝死了，那就由你来当这一任上帝吧。你要为自己赎罪，不得超生！"
     "达成成就，赎罪的上帝"
-    $ achievements.force_unlock("god")
+    $ achievements.unlock_achievement("god")
+    "end"
     return
 
 
