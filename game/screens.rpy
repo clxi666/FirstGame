@@ -294,6 +294,7 @@ screen navigation():
         if main_menu:
 
             textbutton _("开始游戏") action Start()
+            
 
         else:
 
@@ -302,6 +303,8 @@ screen navigation():
             textbutton _("保存") action ShowMenu("save")
 
         textbutton _("读取游戏") action ShowMenu("load")
+
+        textbutton _("成就") action Show("achievement_gallery")
 
         textbutton _("设置") action ShowMenu("preferences")
 

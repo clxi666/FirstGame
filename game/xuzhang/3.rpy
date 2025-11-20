@@ -82,6 +82,7 @@ label chengduluolia:
     mc"这样好像也不错"
     "冯邓红堕落了"
     "解锁成就，你在湖工商只能算个萝莉！"
+    $ achievements.force_unlock("luoli")
     pangbai"告白怎么还被截胡了呢"
     "end"
     return
@@ -117,6 +118,7 @@ label Single_Line:
     mc "我的一切都毁了"
     scene black with fade
     "达成成就，单身之神。"
+    $ achievements.force_unlock("single")
     "是不是哪里走错了呢？好好想想吧"
     "end"
     return

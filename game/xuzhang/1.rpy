@@ -59,10 +59,6 @@ image chengduluoli = "chengduluoli1.png"
 image chengduluoli2 = "chengduluoli2.png"
 
 
-# default dcxmark = 0
-# default yujiemark = 0
-# default maodiemark = 0
-# default out_triggered = False
 
 label thestart:
     play music library_bgm fadein 2.0
