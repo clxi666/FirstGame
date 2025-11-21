@@ -281,6 +281,32 @@ style quick_button_text:
 ##
 ## 该屏幕包含在标题菜单和游戏菜单中，并提供导航到其他菜单，以及启动游戏。
 
+# screen navigation():
+
+#     vbox:
+#         style_prefix "navigation"
+
+#         xpos gui.navigation_xpos
+#         yalign 0.5
+
+#         spacing gui.navigation_spacing
+
+#         if main_menu:
+
+#             textbutton _("开始游戏") action Start()
+            
+
+#         else:
+
+#             textbutton _("历史") action ShowMenu("history")
+
+#             textbutton _("保存") action ShowMenu("save")
+
+#         textbutton _("读取游戏") action ShowMenu("load")
+
+#         textbutton _("成就") action Show("achievement_gallery")
+
+#         textbutton _("设置") action ShowMenu("preferences")
 screen navigation():
 
     vbox:
@@ -292,41 +318,81 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if main_menu:
-
-            textbutton _("开始游戏") action Start()
+            imagebutton:
+                idle Transform("images/start_game_idle.png",zoom=0.3) 
+                hover Transform("images/start_game_hover.png",zoom=0.3)
+                action Start()
+                xpos 0  
+                ypos 20
             
-
+            imagebutton:
+                idle Transform("images/load_hover.png" ,zoom=0.3)          # 读档
+                hover Transform("images/load_idle.png",zoom=0.3)         
+                action ShowMenu("load")
+                xpos 0     
+                ypos 50
+            
+            imagebutton:
+                idle Transform("images/achievement_idle.png",zoom=0.3)   # 成就
+                hover Transform("images/achievement_hover.png",zoom=0.3) 
+                action Show("achievement_gallery")
+                xpos 0     
+                ypos 80
+            
+            imagebutton:
+                idle Transform("images/preferences_idle.png" ,zoom=0.3)  #设置 
+                hover Transform("images/preferences_hover.png",zoom=0.3)
+                action ShowMenu("preferences")
+                xpos 0     
+                ypos 110
         else:
+            imagebutton:
+                idle Transform("images/historymei.png",zoom=0.2)   # 历史
+                hover Transform("images/historyanle.png",zoom=0.2)
+                action ShowMenu("history")
+                xpos 50  
+                ypos 10
+            
+            imagebutton:
+                idle Transform("images/achievement_idle.png",zoom=0.2)   # 成就
+                hover Transform("images/achievement_hover.png",zoom=0.2) 
+                action Show("achievement_gallery")
+                xpos 50  
+                ypos 30 
 
-            textbutton _("历史") action ShowMenu("history")
+            imagebutton:
+                idle Transform("images/preferences_idle.png" ,zoom=0.2)  #设置 
+                hover Transform("images/preferences_hover.png",zoom=0.2)
+                action ShowMenu("preferences")
 
-            textbutton _("保存") action ShowMenu("save")
+                xpos 50     
+                ypos 50
 
-        textbutton _("读取游戏") action ShowMenu("load")
+            imagebutton:
+                idle Transform("images/cundanganle.png",zoom=0.2)   # 存档
+                hover Transform("images/cundang.png",zoom=0.2) 
+                action ShowMenu("save") 
 
-        textbutton _("成就") action Show("achievement_gallery")
-
-        textbutton _("设置") action ShowMenu("preferences")
+                xpos 50     
+                ypos 80
+            imagebutton:
+                idle Transform("images/load_hover.png" ,zoom=0.2)          # 读档
+                hover Transform("images/load_idle.png",zoom=0.2)         
+                action ShowMenu("load")
+                xpos 50     
+                ypos 110
 
         if _in_replay:
 
             textbutton _("结束回放") action EndReplay(confirm=True)
 
         elif not main_menu:
-
-            textbutton _("标题菜单") action MainMenu()
-
-        textbutton _("关于") action ShowMenu("about")
-
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## “帮助”对移动设备来说并非必需或相关。
-            textbutton _("帮助") action ShowMenu("help")
-
-        if renpy.variant("pc"):
-
-            ## 退出按钮在 iOS 上是被禁止使用的，在安卓和网页上也不是必要的。
-            textbutton _("退出") action Quit(confirm=not main_menu)
+            imagebutton:
+                idle Transform( "images/biaoticaidanmeian.png",zoom=0.2)   #标题菜单
+                hover Transform("images/biaoticaidananle.png" ,zoom=0.2)  
+                action MainMenu()
+                xpos 50   
+                ypos 130
 
 
 style navigation_button is gui_button
@@ -361,16 +427,18 @@ screen main_menu():
 
     add gui.main_menu_background xalign 0.5 yalign 0.5 fit"fill"alpha 1.0
 
-    fixed:
-        xpos 0.05 
-        ypos 0.05 
-        add"images/title.png"  size(250,125) alpha 1.0
+    
 
     
 
     ## 此空框可使标题菜单变暗。
     frame:
         style "main_menu_frame"
+
+    fixed:
+        xpos 0.05 
+        ypos 0.05 
+        add"images/title.png"  size(250,125) alpha 1.0
 
     ## use 语句将其他的屏幕包含进此屏幕。标题屏幕的实际内容在导航屏幕中。
     use navigation
@@ -484,7 +552,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     use navigation
 
-    textbutton _("返回"):
+    textbutton _("<返回"):
         style "return_button"
 
         action Return()

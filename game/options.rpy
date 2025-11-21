@@ -31,7 +31,11 @@ define config.version = "1.0"
 define gui.about = _p("""
 """)
 
-
+# init python:
+#     build.name = "hutbgame"
+#     build.package_name = "com.lili.hutb"
+#     if renpy.android:
+#         build.android_name = "我在湖工商当主角" 
 ## 在构建的发布版中，可执行文件和目录所使用的短名称。此处仅限使用 ASCII 字符，并
 ## 且不能包含空格、冒号或分号。
 
