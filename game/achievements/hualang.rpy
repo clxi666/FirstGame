@@ -118,13 +118,13 @@ screen achievement_gallery():
                                 text "没有成就可显示" size 18 color "#f00" xalign 0.5
             
             # 测试按钮
-            # hbox:
-            #     xalign 0.5
-            #     spacing 10
-            #     textbutton "测试解锁单身" action Function(achievements.force_unlock, "single")
-            #     textbutton "测试解锁萝莉" action Function(achievements.force_unlock, "luoli")
-            #     textbutton "测试解锁上帝" action Function(achievements.force_unlock, "god")
-            #     textbutton "重置所有成就" action Function(achievements.reset_all_achievements)
+            hbox:
+                xalign 0.5
+                spacing 10
+                textbutton "测试解锁单身" action Function(achievements.force_unlock, "single")
+                textbutton "测试解锁萝莉" action Function(achievements.force_unlock, "luoli")
+                textbutton "测试解锁上帝" action Function(achievements.force_unlock, "god")
+                textbutton "重置所有成就" action Function(achievements.reset_all_achievements)
             
             # textbutton "返回":
             #     action Return()

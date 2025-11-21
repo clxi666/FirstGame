@@ -104,7 +104,10 @@ label choice_leave:
     "一个声音" "上一任上帝死了，那就由你来当这一任上帝吧。你要为自己赎罪，不得超生！"
     "达成成就，赎罪的上帝"
     $ achievements.unlock_achievement("god")
+<<<<<<< HEAD
     pause 1.0
+=======
+>>>>>>> 3555661a1115d505d06ed377e4488a29f6b84bb4
     "end"
     return
 

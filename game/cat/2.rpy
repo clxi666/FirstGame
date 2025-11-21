@@ -199,7 +199,10 @@ label jujuemaodie:
             mc "有时候也得根据自身能力做判断啊"
             "解锁成就，无情的人"
             $ achievements.unlock_achievement("wuqing")
+<<<<<<< HEAD
             "……"
             pause 1.0
             "end"
+=======
+>>>>>>> 3555661a1115d505d06ed377e4488a29f6b84bb4
             
